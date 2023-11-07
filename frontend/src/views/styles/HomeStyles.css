@@ -1,0 +1,13 @@
+#adminContainer {
+  display: flex;
+}
+
+#userContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.header {
+  margin: 20px 0;
+}

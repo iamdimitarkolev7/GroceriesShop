@@ -1,0 +1,78 @@
+.productBox {
+  background: #fff;
+  margin: 0 30px;
+  width: 150px;
+  height: 210px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  padding: 40px 15px 35px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.productBox:before, .productBox:after {
+  content: '';
+  background: linear-gradient(to bottom, #000000, #585757);
+  width: 100%;
+  height: 40px;
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.productBox:after {
+  background: #4d4c4c;
+  top: auto;
+  bottom: 0;
+  height: 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+.productBox .title {
+  color: #fff;
+  background: #000000;
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 10px 12px 9px;
+  margin: -10px 0 18px;
+  display: inline-block;
+  position: relative;
+}
+
+.productBox .title:before, .productBox .title:after {
+  content: "";
+  background: linear-gradient(to top left, #2c2b2b 49%, transparent 50%);
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 0;
+  left: -10px;
+}
+
+.productBox .title:after {
+  transform: rotateY(180deg);
+  left: auto;
+  right: -10px;
+}
+
+.productBox .asset-icon {
+  margin: 0 0 15px;
+}
+
+.productBox .asset-icon img {
+  width: 50px;
+  height: 50px;
+}
+
+.productBox .price {
+  margin: 10px 0px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.productBox .deal {
+  font-size: 12px;
+}

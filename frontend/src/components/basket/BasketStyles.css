@@ -1,0 +1,54 @@
+/* Basket component container */
+.basketContainer {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Title styling */
+h1 {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+}
+
+/* List of products */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+li {
+  text-decoration: none;
+  font-size: 16px;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Buttons */
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Final Price paragraph */
+p {
+  font-size: 18px;
+  color: #333;
+  margin: 20px 0;
+}
