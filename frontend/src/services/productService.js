@@ -43,11 +43,10 @@ const getAllProducts = async () => {
     const data = await response.json();
     const products = data.data.products;
 
-    console.log(products); // You can log the products here if needed
     return products;
   } catch (err) {
     console.error(err);
-    return []; // Return an empty array or handle the error as needed
+    return [];
   }
 };
 

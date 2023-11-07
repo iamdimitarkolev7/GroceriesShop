@@ -33,14 +33,8 @@ const AddNewItemForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("im here");
-    console.log(productName);
-    console.log(price);
-    console.log(imageUrl);
 
     if (productName && price && imageUrl) {
-
-      console.log("if");
       const newProduct = {
         productName,
         price: parseFloat(price),

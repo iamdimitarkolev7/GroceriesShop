@@ -1,5 +1,4 @@
 const handleAuthResponse = (response, setIsLoggedIn, setIsAdmin, navigate) => {
-  const message = response.message;
   
   const user = response.data.user;
   const userRole = response.data.userRole;

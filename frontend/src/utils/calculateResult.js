@@ -20,7 +20,6 @@ export const calculateResult = (basketProducts) => {
           buyOneGetOneObj[product.name] = product.price;
         } else {
           result += 1.5 * product.price;
-          console.log("result += 1.5 * product.price = " + result);
           delete buyOneGetOneObj[product.name];
         }
         break;
