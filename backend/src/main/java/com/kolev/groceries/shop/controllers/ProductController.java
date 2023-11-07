@@ -43,7 +43,6 @@ public class ProductController {
     public ResponseEntity<Response> addNewProduct(@RequestBody AddProductRequest request) {
 
         try {
-
             Product product = productService.addNewProduct(request);
 
             return ResponseEntity.ok(
@@ -54,7 +53,6 @@ public class ProductController {
             );
         }
         catch (RuntimeException err) {
-
             return ResponseEntity.badRequest().body(
                     Response.builder()
                             .message(err.getMessage())
@@ -67,7 +65,6 @@ public class ProductController {
     public ResponseEntity<Response> deleteProduct(@RequestBody DeleteProductRequest request) {
 
         try {
-
             productService.deleteProduct(request);
 
             return ResponseEntity.ok(
@@ -77,7 +74,6 @@ public class ProductController {
             );
         }
         catch (RuntimeException err) {
-
             return ResponseEntity.badRequest().body(
                     Response.builder()
                             .message(err.getMessage())
