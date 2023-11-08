@@ -1,20 +1,13 @@
 package com.kolev.groceries.shop.controllers;
 
-import com.kolev.groceries.shop.enums.Role;
-import com.kolev.groceries.shop.models.Product;
 import com.kolev.groceries.shop.models.User;
 import com.kolev.groceries.shop.services.interfaces.UserService;
-import com.kolev.groceries.shop.utils.requests.user.AddToBasketRequest;
 import com.kolev.groceries.shop.utils.requests.user.UserLoginRequest;
 import com.kolev.groceries.shop.utils.requests.user.UserRegisterRequest;
 import com.kolev.groceries.shop.utils.response.Response;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDateTime;
-import java.util.List;
 
 @RestController
 @RequiredArgsConstructor

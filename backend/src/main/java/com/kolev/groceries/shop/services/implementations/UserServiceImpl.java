@@ -4,11 +4,9 @@ import com.kolev.groceries.shop.enums.Role;
 import com.kolev.groceries.shop.exceptions.user.PasswordsDoNotMatchException;
 import com.kolev.groceries.shop.exceptions.user.UserAlreadyExistsException;
 import com.kolev.groceries.shop.exceptions.user.UserDoesNotExistException;
-import com.kolev.groceries.shop.models.Product;
 import com.kolev.groceries.shop.models.User;
 import com.kolev.groceries.shop.repositories.UserRepository;
 import com.kolev.groceries.shop.services.interfaces.UserService;
-import com.kolev.groceries.shop.utils.requests.user.AddToBasketRequest;
 import com.kolev.groceries.shop.utils.requests.user.UserLoginRequest;
 import com.kolev.groceries.shop.utils.requests.user.UserRegisterRequest;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +16,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
