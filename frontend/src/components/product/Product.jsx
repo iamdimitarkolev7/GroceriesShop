@@ -2,14 +2,20 @@ import React from 'react';
 
 import './ProductStyles.css';
 import AddToBasketButton from '../buttons/addToBasketButton/AddToBasketButton';
+import { addProductToBasket } from '../../services/basketService';
 
-const Product = ({name, price, deal, imageUrl, addToBasket}) => {
+const Product = ({name, price, deal, imageUrl}) => {
 
   const addToBasketHandler = () => {
-    const product = {
-      name, price, deal
-    }
-    addToBasket(product);
+    
+    const data = {
+      userId: sessionStorage.getItem('userId'),
+      productName: name,
+      productPrice: parseFloat(price),
+      productDeal: deal
+    };
+
+    addProductToBasket(data);
   };
 
   return (

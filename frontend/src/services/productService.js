@@ -1,4 +1,5 @@
 const addNewProduct = (data) => {
+
   fetch('http://localhost:8087/api/products/addNewProduct', {
     method: 'POST',
     body: JSON.stringify(data),
@@ -13,6 +14,7 @@ const addNewProduct = (data) => {
 };
 
 const deleteProduct = (data) => {
+
   fetch('http://localhost:8087/api/products/deleteProduct', {
     method: 'DELETE',
     body: JSON.stringify(data),
@@ -27,6 +29,7 @@ const deleteProduct = (data) => {
 };
 
 const getAllProducts = async () => {
+  
   try {
     const response = await fetch('http://localhost:8087/api/products/getAll', {
       method: 'GET',

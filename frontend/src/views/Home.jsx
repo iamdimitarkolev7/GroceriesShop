@@ -12,25 +12,15 @@ const Home = () => {
 
   const { isLoggedIn, isAdmin } = useContext(AuthContext);
   const [products, setProducts] = useState([]);
-  const [basketProducts, setBasketProducts] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       const p = await getAllProducts();
       setProducts(p);
-      console.log(p);
     };
 
     fetchData();
   }, []);
-
-  const addToBasket = (product) => {
-    setBasketProducts([...basketProducts, product]);
-  }
-
-  const clearBasket = () => {
-    setBasketProducts([]);
-  }
 
   return (
     <div>
@@ -43,8 +33,8 @@ const Home = () => {
       }
       { isLoggedIn && !isAdmin && 
         <div id='userContainer'>
-          <ProductList products={products} addToBasket={addToBasket}></ProductList>
-          <Basket basketProducts={basketProducts} clearBasket={clearBasket}></Basket>
+          <ProductList products={products}/>
+          <Basket/>
         </div>
       }
     </div>

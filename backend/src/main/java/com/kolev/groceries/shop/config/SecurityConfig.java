@@ -21,6 +21,7 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> {
                     auth
+                            .requestMatchers("/api/basket/**").permitAll()
                             .requestMatchers("/api/products/**").permitAll()
                             .requestMatchers("/api/users/**").permitAll()
                             .anyRequest().authenticated();

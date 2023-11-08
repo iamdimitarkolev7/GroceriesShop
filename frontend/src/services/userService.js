@@ -2,6 +2,7 @@ import { handleAuthResponse } from './utils/handleAuthResponse';
 import { handleError } from './utils/handleError';
 
 const register = (data, setIsLoggedIn, setIsAdmin, navigate) => {
+  
   fetch('http://localhost:8087/api/users/register', {
     method: 'POST',
     body: JSON.stringify(data),
@@ -16,6 +17,7 @@ const register = (data, setIsLoggedIn, setIsAdmin, navigate) => {
 }
 
 const login = (data, setIsLoggedIn, setIsAdmin, navigate) => {
+  
   fetch('http://localhost:8087/api/users/login', {
     method: 'POST',
     body: JSON.stringify(data),
@@ -30,6 +32,7 @@ const login = (data, setIsLoggedIn, setIsAdmin, navigate) => {
 }
 
 const logout = (setIsLoggedIn, navigate) => {
+  
   sessionStorage.removeItem('userId');
   sessionStorage.removeItem('userRole');
   setIsLoggedIn(false);

@@ -3,7 +3,7 @@ import Product from '../product/Product';
 
 import './ProductsListStyles.css';
 
-const ProductList = ({ products, addToBasket }) => {
+const ProductList = ({ products }) => {
 
   if (!Array.isArray(products) || products.length === 0) {
     return <div>No products to display</div>;
@@ -17,8 +17,7 @@ const ProductList = ({ products, addToBasket }) => {
           name={product.name} 
           price={product.price} 
           deal={product.deal} 
-          imageUrl={product.imageUrl} 
-          addToBasket={addToBasket} />
+          imageUrl={product.imageUrl} />
       ))}
     </div>
   );

@@ -7,7 +7,8 @@ import Register from './views/Register';
 import Login from './views/Login';
 import { AuthProvider } from './contexts/AuthContext'
 
-function App() {
+const App = () => {
+  
   return (
     <div className='App'>
       <AuthProvider>

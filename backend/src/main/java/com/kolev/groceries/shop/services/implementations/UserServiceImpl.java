@@ -4,9 +4,11 @@ import com.kolev.groceries.shop.enums.Role;
 import com.kolev.groceries.shop.exceptions.user.PasswordsDoNotMatchException;
 import com.kolev.groceries.shop.exceptions.user.UserAlreadyExistsException;
 import com.kolev.groceries.shop.exceptions.user.UserDoesNotExistException;
+import com.kolev.groceries.shop.models.Product;
 import com.kolev.groceries.shop.models.User;
 import com.kolev.groceries.shop.repositories.UserRepository;
 import com.kolev.groceries.shop.services.interfaces.UserService;
+import com.kolev.groceries.shop.utils.requests.user.AddToBasketRequest;
 import com.kolev.groceries.shop.utils.requests.user.UserLoginRequest;
 import com.kolev.groceries.shop.utils.requests.user.UserRegisterRequest;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +17,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -66,6 +70,7 @@ public class UserServiceImpl implements UserService {
         User user = User.builder()
                 .username(request.getUsername())
                 .password(request.getPassword())
+                .basket(new ArrayList<>())
                 .role(Role.ROLE_USER)
                 .build();
 
@@ -75,18 +80,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public User loginUser(UserLoginRequest request) {
 
-        Optional<User> user = getUserByUsername(request.getUsername());
+        Optional<User> oUser = getUserByUsername(request.getUsername());
 
-        if (user.isEmpty()) {
+        if (oUser.isEmpty()) {
             throw new UserDoesNotExistException("User does not exist!");
         }
 
-        boolean passwordsMatch = bCryptPasswordEncoder.matches(request.getPassword(), user.get().getPassword());
+        boolean passwordsMatch = bCryptPasswordEncoder.matches(request.getPassword(), oUser.get().getPassword());
 
         if (!passwordsMatch) {
             throw new PasswordsDoNotMatchException("Passwords do not match!");
         }
 
-        return user.get();
+        return oUser.get();
     }
 }
